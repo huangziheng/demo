@@ -27,3 +27,9 @@ HELP.md
 
 ### VS Code ###
 .vscode/
+
+.mvn/
+log/
+mvnw
+mvnw.cmd
+
