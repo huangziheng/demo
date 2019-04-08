@@ -3,10 +3,11 @@ package com.example.demo.business.model;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Table;
+import java.io.Serializable;
 import java.util.List;
 @Entity
 @Table(name="user")
-public class User {
+public class User implements Serializable {
 
     @Id
     private String id;
@@ -38,5 +39,11 @@ public class User {
         this.roles = roles;
     }
 
+    public void setId(String id) {
+        this.id = id;
+    }
 
+    public void setPassword(String password) {
+        this.password = password;
+    }
 }

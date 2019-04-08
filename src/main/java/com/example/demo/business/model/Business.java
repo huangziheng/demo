@@ -9,7 +9,7 @@ import javax.persistence.Table;
  * Created by Administrator on 2019/3/18 0018.
  */
 @Table(name="business")
-public class Business extends PageBean{
+public class Business /*extends PageBean*/{
     @Id
     private String id;
 

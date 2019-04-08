@@ -2,10 +2,11 @@ package com.example.demo.business.controller;
 
 import com.example.demo.business.dto.BusinessDto;
 import com.example.demo.business.mapper.BusinessMapper;
-import com.example.demo.business.model.Business;
+import com.example.demo.business.model.User;
 import com.example.demo.business.service.BusinessService;
 import com.example.demo.core.dto.DataResult;
-import com.example.demo.core.util.RedisUtil;
+import com.example.demo.core.util.RedisUtils;
+import com.example.demo.core.util.StringRedisUtil;
 import com.example.demo.exception.BusinessException;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
@@ -32,7 +33,9 @@ public class BusinessController {
     @Autowired
     private BusinessService businessService;
     @Autowired
-    private RedisUtil redisUtil;
+    private StringRedisUtil stringRedisUtil;
+    @Autowired
+    private RedisUtils redisUtils;
 
     @Autowired
     private BusinessMapper businessMapper;
@@ -60,8 +63,8 @@ public class BusinessController {
     @ApiOperation(value = "测试分页结果")
     @RequestMapping(value = "/findItemByPage",method = RequestMethod.POST)
     public Object findItemByPage(@RequestBody BusinessDto businessDto){
-        Object o = businessService.findItemByPage(businessDto.getCurrentPage(),businessDto.getPageSize());
-        return new DataResult<>(o);
+        //Object o = businessService.findItemByPage(businessDto.getCurrentPage(),businessDto.getPageSize());
+        return new DataResult<>(null);
     }
 
     @ApiOperation(value = "测试全局异常和自定义异常")
@@ -77,12 +80,19 @@ public class BusinessController {
     @ApiOperation(value = "测试redis储存和拿取")
     @RequestMapping(value = "/selectRedis",method = RequestMethod.GET)
     public Object selectRedis(){
+        User user=new User();
+        user.setName("黄梓恒");
+        user.setPassword("大帅比");
         Object peng = null;
+        Object ziheng = null;
         try {
-            peng = redisUtil.set("longf", "傻子");
+            //peng = stringRedisUtil.set("longf", "1傻子");
+
+            peng = redisUtils.put("ziheng", user);
+            ziheng = redisUtils.get("ziheng");
         } catch (Exception e) {
             e.printStackTrace();
         }
-        return peng;
+        return ziheng;
     }
 }

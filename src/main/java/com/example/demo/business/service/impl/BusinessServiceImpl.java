@@ -55,9 +55,9 @@ public class BusinessServiceImpl implements BusinessService {
 
     @Override
     public Object testMapper(BusinessDto businessDto) {
-        //List<Business> businessList = businessMapper.selectAll();
-//        List<Business> select = businessMapper.select(businessDto);
-        businessMapper.insertSelective(businessDto);
-        return null;
+        List<Business> businessList = businessMapper.selectAll();
+        //List<Business> select = businessMapper.select(businessDto);
+        //businessMapper.insertSelective(businessDto);
+        return businessList;
     }
 }

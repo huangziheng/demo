@@ -1,3 +1,4 @@
+/*
 package com.example.demo.config;
 
 import com.example.demo.core.Realm.MyShiroRealm;
@@ -9,6 +10,7 @@ import org.springframework.context.annotation.Configuration;
 import org.apache.shiro.mgt.SecurityManager;
 
 import java.util.HashMap;
+
 import java.util.Map;
 
 @Configuration
@@ -60,3 +62,4 @@ public class ShiroConfiguration {
         return authorizationAttributeSourceAdvisor;
     }
 }
+*/
