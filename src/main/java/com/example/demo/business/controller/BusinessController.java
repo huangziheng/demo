@@ -8,6 +8,7 @@ import com.example.demo.core.dto.DataResult;
 import com.example.demo.core.util.RedisUtils;
 import com.example.demo.core.util.StringRedisUtil;
 import com.example.demo.exception.BusinessException;
+import com.example.demo.rabbitmq.RabbitProducer;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import org.slf4j.Logger;
@@ -36,6 +37,8 @@ public class BusinessController {
     private StringRedisUtil stringRedisUtil;
     @Autowired
     private RedisUtils redisUtils;
+    @Autowired
+    private RabbitProducer rabbitProducer;
 
     @Autowired
     private BusinessMapper businessMapper;
@@ -94,5 +97,12 @@ public class BusinessController {
             e.printStackTrace();
         }
         return ziheng;
+    }
+    @ApiOperation(value = "rabbitmq")
+    @RequestMapping(value = "/testStringSend",method = RequestMethod.GET)
+    public void testStringSend(){
+        for(int i=0;i<10;i++){
+            rabbitProducer.stringSend();
+        }
     }
 }

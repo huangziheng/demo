@@ -18,6 +18,10 @@ spring:
         max-idle: 8   # 连接池中的最大空闲连接
         min-idle: 0  # 连接池中的最小空闲连接
     timeout: 1220   # 连接超时时间（毫秒）
+  rabbitmq:
+    addresses: 127.0.0.1
+    username: guest
+    password: guest:
 
 
 mybatis:
