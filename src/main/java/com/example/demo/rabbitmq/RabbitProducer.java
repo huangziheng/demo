@@ -16,9 +16,14 @@ public class RabbitProducer{
     private AmqpTemplate amqpTemplate;
 
     public void stringSend(){
-        String formatString = DateTimeUtil.dateFormat(new Date());
-        System.out.println("send msg"+formatString);
-        //第一个参数为刚刚定义的队列名称
-        this.amqpTemplate.convertAndSend("string",formatString);
+        try {
+            String formatString = DateTimeUtil.dateTimeFormat(new Date());
+            System.out.println("send msg"+formatString);
+            //第一个参数为刚刚定义的队列名称
+            this.amqpTemplate.convertAndSend("string",formatString);
+            Thread.sleep (10000) ;
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
     }
 }

@@ -1,3 +1,4 @@
+/*
 package com.example.demo.business.mapper;
 
 import com.example.demo.business.model.User;
@@ -9,5 +10,6 @@ import org.springframework.stereotype.Repository;
 @Repository
 public interface UserMapper extends MyMapper<User> {
 
-    User selectByUserName(String userName);
+   // User selectByUserName(String userName);
 }
+*/

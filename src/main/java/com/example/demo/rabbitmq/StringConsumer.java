@@ -21,7 +21,12 @@ public class StringConsumer {
      */
     @RabbitHandler
     public void recieved(String msg){
-        System.out.println("recived message"+msg);
+        try {
+            Thread.sleep (10000) ;
+            System.out.println("recived message"+msg);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
         return;
     }
 

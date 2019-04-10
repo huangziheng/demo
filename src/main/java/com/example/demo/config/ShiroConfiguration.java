@@ -1,3 +1,4 @@
+/*
 package com.example.demo.config;
 
 import com.example.demo.core.Realm.MyShiroRealm;
@@ -61,3 +62,4 @@ public class ShiroConfiguration {
         return authorizationAttributeSourceAdvisor;
     }
 }
+*/

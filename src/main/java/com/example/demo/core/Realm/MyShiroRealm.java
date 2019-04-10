@@ -1,3 +1,4 @@
+/*
 package com.example.demo.core.Realm;
 
 import com.example.demo.business.model.Permission;
@@ -60,3 +61,4 @@ public class MyShiroRealm extends AuthorizingRealm {
         }
     }
 }
+*/
