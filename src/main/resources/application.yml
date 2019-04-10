@@ -22,7 +22,13 @@ spring:
     addresses: 127.0.0.1
     username: guest
     password: guest
-
+  mail:
+    host: smtp.qq.com
+    username: 821646177@qq.com
+    password: myabknnqmsdrbdgi
+    port: 587
+    protocol: smtp
+    default-encoding: utf-8
 
 mybatis:
   typeAliasesPackage: com.example.demo.business.model

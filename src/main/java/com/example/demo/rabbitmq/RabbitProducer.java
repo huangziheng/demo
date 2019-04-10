@@ -21,7 +21,7 @@ public class RabbitProducer{
             System.out.println("send msg"+formatString);
             //第一个参数为刚刚定义的队列名称
             this.amqpTemplate.convertAndSend("string",formatString);
-            Thread.sleep (10000) ;
+            Thread.sleep (5000) ;
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
