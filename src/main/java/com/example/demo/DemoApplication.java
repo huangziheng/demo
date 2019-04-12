@@ -10,7 +10,7 @@ import java.util.Properties;
 
 
 @SpringBootApplication
-@MapperScan("com.example.demo.business.mapper")
+@MapperScan({"com.example.demo.*.mapper","com.example.demo.shiro"})
 public class DemoApplication {
 
 	public static void main(String[] args) {
