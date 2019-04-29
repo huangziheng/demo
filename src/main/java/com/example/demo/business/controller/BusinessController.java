@@ -8,6 +8,7 @@ import com.example.demo.core.dto.DataResult;
 import com.example.demo.core.util.RedisUtils;
 import com.example.demo.core.util.StringRedisUtil;
 import com.example.demo.exception.BusinessException;
+import com.example.demo.exception.ServiceException;
 import com.example.demo.rabbitmq.RabbitProducer;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
@@ -76,7 +77,8 @@ public class BusinessController {
 //        int num = 1/0;
         logger.info("22222222222222222");
 //        return this.msg;
-        throw new BusinessException("100","密码错误");
+        throw new ServiceException("100","密码错误");
+
 
     }
 
@@ -85,7 +87,7 @@ public class BusinessController {
     public Object selectRedis(){
         User user=new User();
         user.setName("黄梓恒");
-        user.setPassword("大帅比");
+        user.setPassword("11111111111111111");
         Object peng = null;
         Object ziheng = null;
         try {

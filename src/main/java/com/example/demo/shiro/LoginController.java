@@ -1,3 +1,4 @@
+/*
 package com.example.demo.shiro;
 
 import org.apache.shiro.SecurityUtils;
@@ -55,3 +56,4 @@ public class LoginController {
 		return "index";
 	}
 }
+*/

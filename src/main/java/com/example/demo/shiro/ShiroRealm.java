@@ -1,3 +1,4 @@
+/*
 package com.example.demo.shiro;
 
 import org.apache.shiro.authc.*;
@@ -11,17 +12,21 @@ public class ShiroRealm extends AuthorizingRealm {
     @Autowired
     private UserMapper userMapper;
 
-    /**
+    */
+/**
      * 获取用户角色和权限
-     */
+     *//*
+
     @Override
     protected AuthorizationInfo doGetAuthorizationInfo(PrincipalCollection principal) {
         return null;
     }
 
-    /**
+    */
+/**
      * 登录认证
-     */
+     *//*
+
     @Override
     protected AuthenticationInfo doGetAuthenticationInfo(AuthenticationToken token) throws AuthenticationException {
         String userName = (String) token.getPrincipal();
@@ -45,3 +50,4 @@ public class ShiroRealm extends AuthorizingRealm {
 
 
 }
+*/
